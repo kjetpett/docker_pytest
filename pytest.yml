@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pytest-deployment
+  labels:
+    app: pytest
+spec:
+  selector:
+    matchLabels:
+      app: pytest
+  template:
+    metadata:
+      labels:
+        app: pytest
+    spec:
+      containers:
+      - name: pytest
+        image: 3525trd:32000/pytest
+        ports:
+        - containerPort: 80
