@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: dockerpytest
-        image: localhost:32000/dockerpytest:registry
+        image: 3525trd:32000/dockerpytest:registry
         ports:
         - containerPort: 80
