@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dockerpytest-deployment
+  labels:
+    app: dockerpytest
+spec:
+  selector:
+    matchLabels:
+      app: dockerpytest
+  template:
+    metadata:
+      labels:
+        app: dockerpytest
+    spec:
+      containers:
+      - name: dockerpytest
+        image: localhost:32000/dockerpytest:registry
+        ports:
+        - containerPort: 80
