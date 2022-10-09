@@ -16,5 +16,6 @@ spec:
       containers:
       - name: dockerpytest
         image: 3525trd:32000/dockerpytest:registry
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
