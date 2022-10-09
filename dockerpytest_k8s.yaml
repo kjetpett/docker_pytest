@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: dockerpytest
-        image: 3525trd:32000/dockerpytest:registry
+        image: ghcr.io/kjetpett/docker_pytest:latest
         imagePullPolicy: Always
-        ports:
-        - containerPort: 80
+      imagePullSecrets:
+      - name: ghcr-login-secret
