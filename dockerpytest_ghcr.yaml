@@ -16,8 +16,16 @@ spec:
       containers:
       - name: dockerpytest
         image: ghcr.io/kjetpett/docker_pytest:latest
-        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
         # ports:
+        imagePullPolicy: Always
+
         # - containerPort: 80
       imagePullSecrets:
       - name: ghcr-login-secret
