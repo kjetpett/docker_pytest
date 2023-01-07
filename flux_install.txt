@@ -1,0 +1,7 @@
+flux bootstrap github --owner=$GITHUB_USER --repository=vse-flux --branch=main --path=./clusters/vse-aks1 --personal
+
+ kubectl get all -n flux-system
+
+flux create source git docker_pytest --url=https://github.com/kjetpett/docker_pytest --branch=main --interval=30s --export > ./clusters/vse-aks1/docker_pytest-source.yaml
+
+ghcr.io/kjetpett/docker_pytest:latest
