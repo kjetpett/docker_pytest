@@ -52,4 +52,6 @@ jobs:
           # target: final
           push: true
           tags: |
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{steps.version.outputs.date_version}}
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+        run: |
+          echo ${{steps.version.outputs.date_version}}
