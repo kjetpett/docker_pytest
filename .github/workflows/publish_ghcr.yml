@@ -41,6 +41,10 @@ jobs:
         #   # docker run ghcr.io/kjetpett/docker_pytest:latest
         #   docker push ghcr.io/kjetpett/docker_pytest:latest
 
+      - name: output env variables
+        run: |
+          echo ${{steps.version.outputs.date_version}}
+
       - name: Build and push Docker images
         uses: docker/build-push-action@v3
         env:
@@ -53,5 +57,3 @@ jobs:
           push: true
           tags: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
-        run: |
-          echo ${{steps.version.outputs.date_version}}
