@@ -51,4 +51,5 @@ jobs:
           file: ./Dockerfile
           # target: final
           push: true
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{steps.version.outputs.date_version}}
